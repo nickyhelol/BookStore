@@ -8,5 +8,7 @@ namespace BookStore.Models
     public interface IProductRepository
     {
         IQueryable<Product> Products { get; }
+
+        void SaveProduct(Product product);     //For saving the change of the product repo
     }
 }

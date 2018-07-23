@@ -24,7 +24,12 @@ namespace BookStore
             options.UseSqlServer(
             Configuration["Data:BookStoreProducts:ConnectionString"]));
             services.AddTransient<IProductRepository, EFProductRepository>();
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));   //Registering service for Cart and SessionCart
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<IOrderRepository, EFOrderRepository>();  //Registering order repository service
             services.AddMvc();
+            services.AddMemoryCache();      //Enabling storing session state in memory
+            services.AddSession();
         }
 
 
@@ -33,11 +38,49 @@ namespace BookStore
             app.UseStaticFiles();
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
+            app.UseSession();          //Enabling session
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Product}/{action=List}/{id?}");
+                    name: null,
+                    template: "{category}/Page{productPage:int}",
+                    defaults: new { controller = "Product", action = "List"}
+                        );
+
+                routes.MapRoute(
+                    name: null,
+                    template: "Page{productPage:int}",
+                    defaults: new
+                    {
+                        controller = "Product",
+                        action = "List",
+                        productPage = 1
+                    });
+
+                routes.MapRoute(
+                
+                    name: null,
+                    template: "{category}",
+                    defaults: new
+                    {
+                        controller = "Product",
+                        action = "List",
+                        productPage = 1
+                    });
+
+                routes.MapRoute(
+                
+                    name: null,
+                    template: "",
+                    defaults: new
+                    {
+                        controller = "Product",
+                        action = "List",
+                        productPage = 1
+                    });
+
+                routes.MapRoute(name: null, template: "{controller}/{action}/{id?}");
+
             });
 
             SeedData.EnsurePopulated(app);

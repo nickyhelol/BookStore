@@ -2,11 +2,28 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>SportsStore</title>
+    <link rel="stylesheet"
+          asp-href-include="/lib/bootstrap/dist/**/*.min.css"
+          asp-href-exclude="**/*-reboot*,**/*-grid*" />
+    <link rel="stylesheet" asp-href-include="~/lib/fontawesome/css/*.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <title>BookStore</title>
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <nav class="navbar navbar-dark bg-dark" role="navigation">
+        <a class="navbar-brand" href="#">SPORTS STORE</a>
+        <a class="navbar-brand align-self-end">
+            @await Component.InvokeAsync("CartSummary")
+        </a>
+    </nav>
+    <div class="row p-1 m-1">
+        <div id="categories" class="col-3">
+            @await Component.InvokeAsync("NavigationMenu")
+        </div>
+        <div class="col-9">
+            @RenderBody()
+        </div>
     </div>
+    
 </body>
 </html>

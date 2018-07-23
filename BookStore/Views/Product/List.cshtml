@@ -1,10 +1,12 @@
-﻿@model IEnumerable<BookStore.Models.Product>
+﻿@model ProductsListViewModel
 
-@foreach (var p in Model)
+@foreach (var p in Model.Products)
 {
-    <div>
-        <h3>@p.Name</h3>
-        @p.Author
-        <h4>@p.Price.ToString("c")</h4>
-    </div>
+    @Html.Partial("ProductSummary", p)
 }
+
+<div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-secondary"
+     page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory"
+     class="btn-group float-left m-1">
+</div>

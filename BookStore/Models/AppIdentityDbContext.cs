@@ -7,5 +7,6 @@ namespace BookStore.Models
 {
     public class AppIdentityDbContext
     {
+
     }
 }

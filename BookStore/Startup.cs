@@ -98,6 +98,7 @@ namespace BookStore
             });
 
             SeedData.EnsurePopulated(app);
+            IdentitySeedData.EnsurePopulated(app);     //Populate the default user identity
         }
     }
 }

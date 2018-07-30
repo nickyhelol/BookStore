@@ -47,6 +47,17 @@ namespace BookStore
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseStatusCodePages();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+            }
+
             app.UseStaticFiles();
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
@@ -97,8 +108,8 @@ namespace BookStore
 
             });
 
-            SeedData.EnsurePopulated(app);
-            IdentitySeedData.EnsurePopulated(app);     //Populate the default user identity
+            //SeedData.EnsurePopulated(app);
+            //IdentitySeedData.EnsurePopulated(app);     //Populate the default user identity
         }
     }
 }

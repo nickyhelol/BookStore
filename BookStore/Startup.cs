@@ -6,6 +6,7 @@ using BookStore.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +24,17 @@ namespace BookStore
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(
             Configuration["Data:BookStoreProducts:ConnectionString"]));
+
+            //Configure the Identity database 
+            services.AddDbContext<AppIdentityDbContext>(options =>
+            options.UseSqlServer(
+            Configuration["Data:BookStoreIdentity:ConnectionString"]));
+
+            //Registering service for Identity
+            services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<AppIdentityDbContext>()
+            .AddDefaultTokenProviders();
+
             services.AddTransient<IProductRepository, EFProductRepository>();
             services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));   //Registering service for Cart and SessionCart
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -35,10 +47,23 @@ namespace BookStore
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseStatusCodePages();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+            }
+
             app.UseStaticFiles();
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseSession();          //Enabling session
+            app.UseAuthentication();       //Set up components that will intercept requests and responses to implement the security policy
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -83,7 +108,8 @@ namespace BookStore
 
             });
 
-            SeedData.EnsurePopulated(app);
+            //SeedData.EnsurePopulated(app);
+            //IdentitySeedData.EnsurePopulated(app);     //Populate the default user identity
         }
     }
 }

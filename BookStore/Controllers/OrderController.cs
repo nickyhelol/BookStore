@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BookStore.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.Controllers
@@ -19,9 +20,11 @@ namespace BookStore.Controllers
         }
 
         //Add a view to present unshipped orders
+        [Authorize]
         public ViewResult List() => View(repository.Orders.Where(o => !o.Shipped));
 
         [HttpPost]
+        [Authorize]
         public IActionResult MarkShipped(int orderID)
         {
             Order order = repository.Orders

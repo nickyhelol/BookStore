@@ -4,9 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BookStore.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookStore.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private IProductRepository repository;
@@ -35,6 +37,14 @@ namespace BookStore.Controllers
             {
                 return View(product);
             }
+        }
+
+        //For testing purpose
+        [HttpPost]
+        public IActionResult SeedDatabase()
+        {
+            SeedData.EnsurePopulated(HttpContext.RequestServices);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

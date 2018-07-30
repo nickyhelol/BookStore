@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookStore.Models;
 using BookStore.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -20,6 +21,9 @@ namespace BookStore.Controllers
         {
             userManager = userMgr;
             signInManager = signInMgr;
+
+            //Seeding Identity database whenever an AccountController is created
+            IdentitySeedData.EnsurePopulated(userMgr).Wait();     
         }
 
         [AllowAnonymous]

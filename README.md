@@ -1,7 +1,7 @@
 # BookStore
 A web application using ASP.NET MVC Core framework to simulate the functionality of a shopping cart.
 
-Display
+Effect Display
 
 <img src="images/image1.PNG" >
 <img src="images/image2.PNG" >

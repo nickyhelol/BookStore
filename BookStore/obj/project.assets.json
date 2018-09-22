@@ -13127,11 +13127,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nicky\\source\\repos\\BookStore\\BookStore\\BookStore.csproj",
+      "projectUniqueName": "C:\\Users\\nicky\\Documents\\Visual Studio 2017\\bookstore\\BookStore\\BookStore.csproj",
       "projectName": "BookStore",
-      "projectPath": "C:\\Users\\nicky\\source\\repos\\BookStore\\BookStore\\BookStore.csproj",
+      "projectPath": "C:\\Users\\nicky\\Documents\\Visual Studio 2017\\bookstore\\BookStore\\BookStore.csproj",
       "packagesPath": "C:\\Users\\nicky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nicky\\source\\repos\\BookStore\\BookStore\\obj\\",
+      "outputPath": "C:\\Users\\nicky\\Documents\\Visual Studio 2017\\bookstore\\BookStore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -9,3 +9,14 @@ C:\Users\nicky\source\repos\BookStore\BookStore\obj\Debug\netcoreapp2.0\BookStor
 C:\Users\nicky\source\repos\BookStore\BookStore\bin\Debug\netcoreapp2.0\BookStore.pdb
 C:\Users\nicky\source\repos\BookStore\BookStore\obj\Debug\netcoreapp2.0\BookStore.dll
 C:\Users\nicky\source\repos\BookStore\BookStore\obj\Debug\netcoreapp2.0\BookStore.pdb
+C:\Users\nicky\Documents\Visual Studio 2017\bookstore\BookStore\bin\Debug\netcoreapp2.0\BookStore.deps.json
+C:\Users\nicky\Documents\Visual Studio 2017\bookstore\BookStore\bin\Debug\netcoreapp2.0\BookStore.runtimeconfig.json
+C:\Users\nicky\Documents\Visual Studio 2017\bookstore\BookStore\bin\Debug\netcoreapp2.0\BookStore.runtimeconfig.dev.json
+C:\Users\nicky\Documents\Visual Studio 2017\bookstore\BookStore\bin\Debug\netcoreapp2.0\BookStore.dll
+C:\Users\nicky\Documents\Visual Studio 2017\bookstore\BookStore\bin\Debug\netcoreapp2.0\BookStore.pdb
+C:\Users\nicky\Documents\Visual Studio 2017\bookstore\BookStore\obj\Debug\netcoreapp2.0\BookStore.csprojAssemblyReference.cache
+C:\Users\nicky\Documents\Visual Studio 2017\bookstore\BookStore\obj\Debug\netcoreapp2.0\BookStore.csproj.CoreCompileInputs.cache
+C:\Users\nicky\Documents\Visual Studio 2017\bookstore\BookStore\obj\Debug\netcoreapp2.0\BookStore.AssemblyInfoInputs.cache
+C:\Users\nicky\Documents\Visual Studio 2017\bookstore\BookStore\obj\Debug\netcoreapp2.0\BookStore.AssemblyInfo.cs
+C:\Users\nicky\Documents\Visual Studio 2017\bookstore\BookStore\obj\Debug\netcoreapp2.0\BookStore.dll
+C:\Users\nicky\Documents\Visual Studio 2017\bookstore\BookStore\obj\Debug\netcoreapp2.0\BookStore.pdb

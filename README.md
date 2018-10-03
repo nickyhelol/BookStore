@@ -1,7 +1,7 @@
 # BookStore
-A web application using ASP.NET MVC Core framework to simulate the functionality of a shopping cart.
+It is a web application using ASP.NET MVC Core framework. This project simulates an online bookstore which allows users to browse products and put them into a shopping cart. It also includes other functionalities including checkout, shipping and administrator functions. 
 
-Effect Display
+## Demo
 
 <img src="images/image1.PNG" >
 <img src="images/image2.PNG" >
@@ -12,3 +12,17 @@ Effect Display
 <img src="images/image7.PNG" >
 <img src="images/image8.PNG" >
 <img src="images/image9.PNG" >
+
+## Features
+
+- Responsive pages regarding in phones, iPad or PC
+- Cloud database
+- Administrator function
+
+## Tech Stack
+
+- ASP.NET MVC Core
+- C#
+- RAZOR Page
+- Entity Framework core 
+- Azure Cloud Service

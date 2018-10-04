@@ -3,7 +3,7 @@ It is a web application using ASP.NET MVC Core framework. This project simulates
 
 ## Demo
 
-https://bookstore20181004103652.azurewebsites.net
+http://bookstore-dotnetcore.azurewebsites.net/
 
 <img src="images/image1.PNG" >
 <img src="images/image2.PNG" >
